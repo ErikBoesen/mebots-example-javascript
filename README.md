@@ -8,7 +8,7 @@ A simple GroupMe bot that reacts to messages sent within a group, designed to de
 Please see [this tutorial](https://github.com/groupme/bot-tutorial-nodejs) for general information about how to set up a GroupMe bot in Node, including Heroku setup instructions.
 
 ## Setup
-Open `bot.py` in your favorite editor and find the line where the bot is instantiated:
+Open `bot.js` in your favorite editor and find the line where the bot is instantiated:
 ```js
 var bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN;
 ```

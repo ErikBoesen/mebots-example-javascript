@@ -1,7 +1,7 @@
 var HTTPS = require('https');
 var mebots = require('mebots');
 
-var bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN;
+var bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN);
 
 function respond() {
     var request = JSON.parse(this.req.chunks[0]),
