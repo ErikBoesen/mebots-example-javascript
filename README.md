@@ -10,7 +10,7 @@ Please see [this tutorial](https://github.com/groupme/bot-tutorial-nodejs) for g
 ## Setup
 Open `bot.js` in your favorite editor and find the line where the bot is instantiated:
 ```js
-var bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN;
+var bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN);
 ```
 Replace `your_bot_shortname_here` with the shortname of your bot, which is visible while editing your bot on the MeBots web interface.
 
