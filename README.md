@@ -1,5 +1,5 @@
 # Sample GroupMe NodeJS Bot using MeBots
-[**Python**](https://github.com/ErikBoesen/mebots-example-python) | **JavaScript**
+[**Python**](https://github.com/ErikBoesen/mebots-example-python) | **JavaScript** | [**Ruby**](https://github.com/ErikBoesen/mebots-example-ruby)
 
 ## Introduction
 
