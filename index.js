@@ -1,33 +1,44 @@
-var http, director, cool, bot, router, server, port;
+// Set the bot token from MeBots in .env under BOT_TOKEN
+let mebots = require('mebots');
+let bot = new mebots.Bot('kittybot', process.env.BOT_TOKEN);
 
-http        = require('http');
-director    = require('director');
-cool        = require('cool-ascii-faces');
-bot         = require('./bot.js');
+// Setup our web routing
+const express = require("express");
+const app = express();
 
-router = new director.http.Router({
-    '/' : {
-        post: bot.respond,
-        get: ping
-    }
+// Library to send POST requests simply
+const axios = require('axios')
+
+// Simple GET route to ping the server
+app.use(express.json())
+app.get("/", function(req, res) {
+  res.sendStatus(200)
 });
 
-server = http.createServer(function (req, res) {
-    req.chunks = [];
-    req.on('data', function (chunk) {
-        req.chunks.push(chunk.toString());
-    });
+// Use this route as the callback URL for the bot
+// Example: https://shadow.herokuapp.com/gm
+app.post('/gm', async (req, res)  => {
+  console.log(req.body)
+  let cmd = req.body.text
+  if(cmd === "/ping") sendmsg("Pong!", req.body.group_id)
+})
 
-    router.dispatch(req, res, function(err) {
-        res.writeHead(err.status, {"Content-Type": "text/plain"});
-        res.end(err.message);
-    });
+// Listens for requests
+const listener = app.listen(process.env.PORT, function() {
+  console.log("Your app is listening on port " + listener.address().port);
 });
 
-port = Number(process.env.PORT || 5000);
-server.listen(port);
-
-function ping() {
-    this.res.writeHead(200);
-    this.res.end("Hey, I'm Cool Guy.");
+// Function to get the bot with MeBots and send a message
+function sendmsg(msg, groupid){
+  bot.getInstance(groupid).then((instance) => {
+  axios.post('https://api.groupme.com/v3/bots/post', {"text" : msg, "bot_id" : instance.id})
+  .then((res) => {
+    console.log(`statusCode: ${res.statusCode}`)
+    console.log(res)
+  })
+  .catch((error) => {
+    console.error(error)
+  })
+});
+  
 }
