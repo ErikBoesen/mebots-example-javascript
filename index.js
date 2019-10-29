@@ -16,8 +16,8 @@ app.get("/", function(req, res) {
 });
 
 // Use this route as the callback URL for the bot
-// Example: https://shadow.herokuapp.com/gm
-app.post('/gm', async (req, res)  => {
+// Example: https://shadow.herokuapp.com/receive
+app.post('/receive', async (req, res)  => {
   console.log(req.body)
   let cmd = req.body.text
   if(cmd === "/ping") sendmsg("Pong!", req.body.group_id)
