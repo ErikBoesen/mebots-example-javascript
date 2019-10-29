@@ -20,7 +20,11 @@ app.get("/", function(req, res) {
 app.post('/receive', async (req, res)  => {
   console.log(req.body)
   let cmd = req.body.text
-  if(cmd === "/ping") sendmsg("Pong!", req.body.group_id)
+  
+  if(cmd === "/ping"){
+    sendmsg("Pong!", req.body.group_id)
+  }
+  
 })
 
 // Listens for requests
