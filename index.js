@@ -21,7 +21,7 @@ app.post('/receive', async (req, res)  => {
   console.log(req.body)
   let cmd = req.body.text
   
-  if(cmd === "/ping"){
+  if (cmd === "/ping") {
     sendmsg("Pong!", req.body.group_id)
   }
   
@@ -33,16 +33,15 @@ const listener = app.listen(process.env.PORT, function() {
 });
 
 // Function to get the bot with MeBots and send a message
-function sendmsg(msg, groupid){
+function sendmsg(msg, groupid) {
   bot.getInstance(groupid).then((instance) => {
   axios.post('https://api.groupme.com/v3/bots/post', {"text" : msg, "bot_id" : instance.id})
-  .then((res) => {
-    console.log(`statusCode: ${res.statusCode}`)
-    console.log(res)
-  })
-  .catch((error) => {
-    console.error(error)
-  })
-});
-  
+    .then((res) => {
+      console.log(`statusCode: ${res.statusCode}`)
+      console.log(res)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  });
 }
