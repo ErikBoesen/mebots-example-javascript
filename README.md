@@ -23,5 +23,5 @@ heroku config:set BOT_TOKEN=0123456789abcdef
 ```
 
 ## Author
-[Erik Boesen](https://github.com/ErikBoesen)	
-[Will Shadow](https://github.com/thewilloftheshadow)
+- [Erik Boesen](https://github.com/ErikBoesen)
+- [Will Shadow](https://github.com/thewilloftheshadow)
