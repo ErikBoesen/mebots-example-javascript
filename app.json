@@ -1,6 +1,0 @@
-{
-  "name": "MeBots test bot",
-  "description": "Basic GroupMe Bot written in Node.js using the MeBots API",
-  "repository": "https://github.com/ErikBoesen/mebots-example-javascript",
-  "keywords": []
-}
