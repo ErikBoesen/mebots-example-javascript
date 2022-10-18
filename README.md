@@ -13,7 +13,7 @@ let bot = new mebots.Bot('your_bot_shortname_here', process.env.BOT_TOKEN;
 ```
 Replace `your_bot_shortname_here` with the shortname of your bot, which is visible while editing your bot on the MeBots web interface.
 
-Then, set the `BOT_TOKEN` environment variable in your shell to the token available in the bot editing panel.
+Then, set the `BOT_TOKEN` environment variable in your shell to the token available in the bot editing panel on the MeBots website.
 ```sh
 export BOT_TOKEN=0123456789abcdef
 ```
